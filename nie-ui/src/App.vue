@@ -96,6 +96,13 @@
       v-model="password"
       :showPassword="true"
     ></ne-input>
+
+    <ne-switch
+      v-model="action"
+      active-color="#13ce66"
+      inactive-color="#ff4949"
+      name="username"
+    ></ne-switch>
   </div>
 </template>
 
@@ -104,8 +111,9 @@ export default {
   data() {
     return {
       visiable: false,
-      username: "",
+      username: "sas",
       password: "",
+      action: true,
     };
   },
   methods: {
