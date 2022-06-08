@@ -96,13 +96,46 @@
       v-model="password"
       :showPassword="true"
     ></ne-input>
-
+    <br />
     <ne-switch
       v-model="action"
       active-color="#13ce66"
       inactive-color="#ff4949"
       name="username"
     ></ne-switch>
+    <br />
+    <ne-radio v-model="gender" label="0">男</ne-radio>
+    <ne-radio v-model="gender" label="1">女</ne-radio>
+    <!-- <ne-radio v-model="gender" label="0"></ne-radio>
+    <ne-radio v-model="gender" label="1"></ne-radio> -->
+
+    <ne-radio-group v-model="gender">
+      <ne-radio label="0">男</ne-radio>
+      <ne-radio label="1">女</ne-radio>
+    </ne-radio-group>
+
+    <br />
+    <ne-checkbox v-model="check" label="0">a</ne-checkbox>
+    <ne-checkbox v-model="check" label="1">b</ne-checkbox>
+    <ne-checkbox v-model="check" label="2">c</ne-checkbox>
+
+    <ne-checkbox-group v-model="group">
+      <ne-checkbox label="0">a</ne-checkbox>
+      <ne-checkbox label="1">b</ne-checkbox>
+      <ne-checkbox label="2">c</ne-checkbox>
+    </ne-checkbox-group>
+
+    <ne-form :model="model">
+      <ne-form-item label="用户名">
+        <ne-input
+          placeholder="请输入用户名"
+          v-model="model.username"
+        ></ne-input>
+      </ne-form-item>
+      <ne-form-item label="选择">
+        <ne-switch v-model="model.active"></ne-switch>
+      </ne-form-item>
+    </ne-form>
   </div>
 </template>
 
@@ -114,6 +147,13 @@ export default {
       username: "sas",
       password: "",
       action: true,
+      gender: "1",
+      check: false,
+      group: [],
+      model: {
+        username: "",
+        active: true,
+      },
     };
   },
   methods: {
